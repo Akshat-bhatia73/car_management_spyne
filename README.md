@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Car Management System
 
-## Getting Started
+SDE Intern Task by Akshat
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌐 Live Demo
+
+- **Application**: [https://car-management-spyne.netlify.app](https://car-management-spyne.netlify.app)
+- **API Documentation**: [https://car-management-spyne.netlify.app/docs](https://car-management-spyne.netlify.app/docs)
+
+## ✨ Features
+
+- 🔐 Secure authentication with Clerk
+- 📝 Complete CRUD operations for car listings
+- 🖼️ Multiple image upload support (up to 10 images per car)
+- 🔍 Real-time search functionality
+- 📱 Responsive design
+- 🚀 Server-side rendering with Next.js 14
+- 📄 Interactive API documentation
+
+## 🛠️ Technology Stack
+
+- **Frontend**: Next.js 14 (App Router)
+- **Authentication**: Clerk
+- **Database**: MongoDB
+- **Image Storage**: Cloudinary
+- **Styling**: Tailwind CSS
+- **Form Management**: React Hook Form + Zod validation
+- **API Documentation**: Swagger/OpenAPI
+
+# To run locally
+
+1. Clone the repository
 ```
+git clone https://github.com/spyne-ai/car-management-system.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+cd car-management-system
+```
+2. Install dependencies: `npm install`
+3. Set up environment variables: 
+```
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+CLOUDINARY_UPLOAD_PRESET=your_cloudinary_upload_preset
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+MONGODB_URI=your_mongodb_uri
+```
+4. Start the development server: `npm run dev`

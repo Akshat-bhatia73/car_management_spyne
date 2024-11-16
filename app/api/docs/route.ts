@@ -197,20 +197,20 @@ export async function GET() {
           },
         },
         '/api/cars/{id}': {
-          parameters: [
-            {
-              name: 'id',
-              in: 'path',
-              required: true,
-              description: 'Car ID',
-              schema: {
-                type: 'string',
-              },
-            },
-          ],
           get: {
             summary: 'Get a car by ID',
             description: 'Retrieve a specific car by its ID',
+            parameters: [
+              {
+                name: 'id',
+                in: 'path',
+                required: true,
+                description: 'Car ID',
+                schema: {
+                  type: 'string',
+                },
+              },
+            ],
             responses: {
               200: {
                 description: 'Car details',
@@ -237,6 +237,17 @@ export async function GET() {
           patch: {
             summary: 'Update a car',
             description: 'Update an existing car',
+            parameters: [
+              {
+                name: 'id',
+                in: 'path',
+                required: true,
+                description: 'Car ID',
+                schema: {
+                  type: 'string',
+                },
+              },
+            ],
             requestBody: {
               required: true,
               content: {
@@ -273,6 +284,17 @@ export async function GET() {
           delete: {
             summary: 'Delete a car',
             description: 'Delete an existing car',
+            parameters: [
+              {
+                name: 'id',
+                in: 'path',
+                required: true,
+                description: 'Car ID',
+                schema: {
+                  type: 'string',
+                },
+              },
+            ],
             responses: {
               200: {
                 description: 'Car deleted successfully',
@@ -307,4 +329,4 @@ export async function GET() {
   });
 
   return Response.json(spec);
-} 
+}

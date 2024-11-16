@@ -1,8 +1,10 @@
 import { getCars } from "@/lib/actions";
 import CarCard from "./car-card";
+import { Car } from "@/lib/types";
 
 export async function CarsList({ search }: { search?: string }) {
-  const cars = await getCars(search);
+  const rawCars = await getCars(search);
+  const cars = rawCars as unknown as Car[];
 
   if (cars.length === 0) {
     return (

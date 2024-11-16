@@ -23,7 +23,7 @@ export async function GET(
     return NextResponse.json(car);
   } catch (error) {
     return NextResponse.json(
-      { error: "Error fetching car" },
+      { error: `Error fetching car: ${error}` },
       { status: 500 }
     );
   }
@@ -55,7 +55,7 @@ export async function PATCH(
     return NextResponse.json(car);
   } catch (error) {
     return NextResponse.json(
-      { error: "Error updating car" },
+      { error: `Error updating car: ${error}` },
       { status: 500 }
     );
   }
@@ -81,7 +81,7 @@ export async function DELETE(
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json(
-      { error: "Error deleting car" },
+      { error: `Error updating car: ${error}` },
       { status: 500 }
     );
   }

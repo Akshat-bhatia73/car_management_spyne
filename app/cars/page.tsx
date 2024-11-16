@@ -1,36 +1,17 @@
 import { Suspense } from "react";
-import { CarsList } from "@/components/cars-list";
+import { CarsList } from "./cars-list";
 import SearchInput from "@/components/search-input";
-import { auth } from "@clerk/nextjs/server";
-import Link from "next/link";
 
-export default async function HomePage({
+export default function CarsPage({
   searchParams,
 }: {
   searchParams: { search?: string }
 }) {
-  const { userId } = await auth();
-
-  if (!userId) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] p-4">
-        <h1 className="text-2xl font-bold mb-4">Welcome to Car Management</h1>
-        <p className="text-gray-600 mb-8 text-center">
-          Please sign in to manage your car listings
-        </p>
-        <Link
-          href="/sign-in"
-          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
-        >
-          Sign In
-        </Link>
-      </div>
-    );
-  }
-
   return (
-    <div className="max-w-7xl mx-auto p-6 space-y-6">
-      <SearchInput />
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <SearchInput />
+      </div>
 
       <Suspense fallback={<CarsListSkeleton />}>
         <CarsList search={searchParams.search} />
@@ -61,4 +42,4 @@ function CarsListSkeleton() {
       ))}
     </div>
   );
-}
+} 

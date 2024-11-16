@@ -8,7 +8,7 @@ export default function ApiDocs() {
   const [spec, setSpec] = useState<any>(null);
 
   useEffect(() => {
-    fetch('/api/docs')
+    fetch('/api/docs')  // This path remains the same as it's fetching from the API
       .then((response) => response.json())
       .then((data) => setSpec(data));
   }, []);
